@@ -24,6 +24,7 @@ namespace Vtiger_Framework.Test_Scripts.Test.LoginTest
             LoginPage login = new LoginPage(driver);
             login.Login(username, password);
         }
+        [Owner("Datta")]
         public static IEnumerable<object[]> Names()
         {
             Spreadsheet spreadsheet = new Spreadsheet();
