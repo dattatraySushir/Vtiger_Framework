@@ -461,7 +461,9 @@
     <Compile Include="Main Folder\ObjectRepository\LoginRepo\LoginPage.cs" />
     <Compile Include="Main Folder\ObjectRepository\OrganizationsRepo\Class1.cs" />
     <Compile Include="Main Folder\ObjectRepository\ProductsRepo\CreateProductpage.cs" />
+    <Compile Include="Main Folder\ObjectRepository\ProductsRepo\DeleteProductpage.cs" />
     <Compile Include="Main Folder\ObjectRepository\ProductsRepo\EditProductPage.cs" />
+    <Compile Include="Main Folder\ObjectRepository\ProductsRepo\MassDeletepage.cs" />
     <Compile Include="Results\Class1.cs" />
     <Compile Include="Test Data\CommonData\Class1.cs" />
     <Compile Include="Test Data\ExcelData\Class1.cs" />
