@@ -21,6 +21,7 @@ namespace Vtiger_Framework.Test_Scripts.Test.CampaignsTest
         public void Create_New_campaign()
         {
             //git commit
+            //commit 02
             IWebDriver driver=new ChromeDriver();
             LoginPage Login = new LoginPage(driver);
             VTigerHomePage home = new VTigerHomePage(driver);
