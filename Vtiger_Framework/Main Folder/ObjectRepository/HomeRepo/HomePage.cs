@@ -56,7 +56,7 @@ namespace Vtiger_Framework.Main_Folder.ObjectRepository.HomeRepo
         public void Logout()
         {
             WebDriverUtility webDriverUtility = new WebDriverUtility();
-            webDriverUtility.MouseHover(administrator);
+            //webDriverUtility.MouseHover(administrator);
             signout.Click();
         }
         public By getMore()

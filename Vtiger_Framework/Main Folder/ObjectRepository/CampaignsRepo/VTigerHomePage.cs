@@ -14,9 +14,10 @@ namespace Vtiger_Framework.Main_Folder.ObjectRepository.CampaignsRepo
     /// </summary>
     public class VTigerHomePage
     {
-        [FindsBy(How =How.XPath, Using = "//img[@src='themes/softed/images/menuDnArrow.gif']")] private IWebElement moreDropDown { get; set; }
-        [FindsBy(How =How.XPath, Using = "//a[@name='Campaigns']")] private IWebElement campaignLink { get; set; }
-        
+
+        [FindsBy(How = How.XPath, Using = "//img[@src='themes/softed/images/menuDnArrow.gif']")] private IWebElement moreDropDown { get; set; }
+        [FindsBy(How = How.XPath, Using = "//a[@name='Campaigns']")] private IWebElement campaignLink { get; set; }
+
         public VTigerHomePage(IWebDriver driver)
         {
             PageFactory.InitElements(driver, this);
@@ -24,7 +25,7 @@ namespace Vtiger_Framework.Main_Folder.ObjectRepository.CampaignsRepo
 
         public void MoreDropDown()
         {
-            WebDriverUtility webAction=new WebDriverUtility();
+            WebDriverUtility webAction = new WebDriverUtility();
             // webAction.MouseHover(moreDropDown);
             moreDropDown.Click();
 
