@@ -36,6 +36,9 @@ namespace Vtiger_Framework.Test_Scripts.Test.CampaignsTest
             home.CampaignLink();
             campaignHome.click_on_add();
 
+            //reading data fro excel
+          // string campaignData = "G:\\TYSS\\C#\\Vtiger_Data.xlsx";
+
             //creating the new campaign
             string campaignName = "Mi Mobiles";
             string campaignType = "Advertisement";
@@ -46,25 +49,35 @@ namespace Vtiger_Framework.Test_Scripts.Test.CampaignsTest
             string campaignNo = driver.FindElement(By.XPath("//td[text()='Campaign No']/following-sibling::td[@class='dvtCellInfo']")).Text;
 
             campaignHome.campaign_Link.Click();
+            campaignNo = campaignNo.Trim();
             Console.WriteLine(campaignNo);
 
 
             string act_campaignName = driver.FindElement(By.XPath("//td[contains(text(),'" + campaignNo + "')]/following-sibling::td/a[@title='Campaigns']")).Text;
+            act_campaignName= act_campaignName.Trim();
+            CreateNewCampaign createcampaign = new CreateNewCampaign();
+            createcampaign.Validation_Test( "Campaign Name", campaignName ,act_campaignName);
 
-            //td[contains(text(),'CAM11 ')]/following-sibling::td/a[@title='Campaigns']
-            Console.WriteLine(act_campaignName);
 
-
-            //validating and creating extent report.
-            string path = "C:\\Users\\Admin\\Source\\Repos\\Vtiger_Framework_new\\Vtiger_Framework\\Results\\Extent_Report_Thejas\\";
-            ExtentReports extentReports = new ExtentReports();
+        }
+        public  void Validation_Test(string validatationName, string expected, string actual)
+        {
+            string path = "C:\\Users\\Admin\\Source\\Repos\\Vtiger_Framework05\\Vtiger_Framework\\Reports\\";
+            ExtentReports extent_Reports = new ExtentReports();
             ExtentHtmlReporter htmlReport = new ExtentHtmlReporter(path);
-            extentReports.AttachReporter(htmlReport);
-            ExtentTest test = extentReports.CreateTest("Create_New_Campaign");
-
-
-            Thread.Sleep(2000);
-
+            extent_Reports.AttachReporter(htmlReport);
+            ExtentTest test = extent_Reports.CreateTest("Create_New_Campaign");
+            try
+            {
+                Assert.AreEqual(expected, actual);
+                test.Pass(validatationName+" ValidationPass");
+            }
+            catch (Exception ex)
+            {
+                test.Fail(validatationName+" Validation fail");
+            }
+            extent_Reports.Flush();
+            htmlReport.Stop();
 
         }
     }
