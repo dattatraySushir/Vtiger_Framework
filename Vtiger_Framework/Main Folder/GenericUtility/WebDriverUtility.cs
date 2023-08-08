@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Interactions;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,14 +33,15 @@ namespace Vtiger_Framework.Main_Folder.GenericUtility
         {
             driver.Manage().Window.Maximize();
         }
-        ///<summary>
-        ///this method is used to do the mouse hover actions on the web elements using actions class
-        ///</summary>
+        /// <summary>
+        /// This method is used to select the element present in the list box
+        /// </summary>
         [Owner("Thejas")]
-        public void MouseHover(IWebElement element)
+        public void ListBox_SelectByValue(IWebElement element, string value)
         {
-            Actions action=new Actions(driver);
-            action.MoveToElement(element).Perform();
-    }
+            SelectElement select = new SelectElement(element);
+            select.SelectByValue(value);
+
+        }
     }
 }
