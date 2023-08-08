@@ -49,7 +49,7 @@ namespace Vtiger_Framework.Main_Folder.ObjectRepository.HomeRepo
         //initialisation
         public HomePage(IWebDriver driver)
         {
-            PageFactory.InitElements(driver,this);
+            PageFactory.InitElements(driver, this);
 
         }
         //Business Library
