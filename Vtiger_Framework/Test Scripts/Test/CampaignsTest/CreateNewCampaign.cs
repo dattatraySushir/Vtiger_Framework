@@ -14,19 +14,18 @@ using Vtiger_Framework.Main_Folder.ObjectRepository.LoginRepo;
 namespace Vtiger_Framework.Test_Scripts.Test.CampaignsTest
 {
     [TestClass]
-    public class CreateNewCampaign //: BaseClass
+    public class CreateNewCampaign : BaseClass
     {
         [TestMethod]
         [Owner("Thejas")]
         public void Create_New_campaign()
         {
-            IWebDriver driver=new ChromeDriver();
+           
             LoginPage Login = new LoginPage(driver);
             VTigerHomePage home = new VTigerHomePage(driver);
             WebDriverUtility webaction = new WebDriverUtility();
-            webaction.WaitImplicitly(driver);
-            webaction.MaximiseWindow(driver);
-            driver.Navigate().GoToUrl("http://localhost:8888/");
+           
+          
             Login.Login();
 
 
@@ -36,7 +35,7 @@ namespace Vtiger_Framework.Test_Scripts.Test.CampaignsTest
            
 
             
-            Thread.Sleep(2000);
+          
 
 
         }

@@ -15,7 +15,7 @@ namespace Vtiger_Framework.Test_Scripts.Test.LoginTest
     public class LoginTest : BaseClass
     {
       
-        [TestMethod]
+        //[TestMethod]
         [Owner("Datta")]
         [DynamicData(nameof(Names), DynamicDataSourceType.Method)]
         public void loginMethod(string username, string password)

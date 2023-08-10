@@ -43,6 +43,7 @@ namespace Vtiger_Framework.Main_Folder.GenericUtility
             extentHtmlReporter = new ExtentHtmlReporter(CommonData.reportspath);
             extentReports.AddSystemInfo("Organisation" , "Tyss");
             extentReports.AttachReporter(extentHtmlReporter);
+            extentTest = extentReports.CreateTest(TestContext.TestName);
         }
         [AssemblyCleanup]
         [Owner("Datta")]
