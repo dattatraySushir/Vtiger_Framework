@@ -19,25 +19,14 @@ namespace Vtiger_Framework.Test_Scripts.Test.CampaignsTest
         [TestMethod]
         [Owner("Thejas")]
         public void Create_New_campaign()
-        {
-           
+        { 
             LoginPage Login = new LoginPage(driver);
             VTigerHomePage home = new VTigerHomePage(driver);
             WebDriverUtility webaction = new WebDriverUtility();
-           
-          
-            Login.Login();
-
-
-          
+            Login.Login();        
             home.MoreDropDown();
             home.CampaignLink();
-           
-
-            
-          
-
-
+  
         }
     }
 }
